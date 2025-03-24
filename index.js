@@ -1,6 +1,8 @@
 import fetchMovies from './api.js';
 
 const filmContainer = document.getElementById('film-container');
+const searchBtn = document.querySelector('.search-btn');
+const searchInput = document.querySelector('.search-input');
 
 
 const cashedMovies = localStorage.getItem("movies")
@@ -14,11 +16,49 @@ const sortingButtons = document.querySelectorAll('.sorting-btns button');
 sortingButtons.forEach((button) => {
     button.addEventListener('click', () => {
         console.log('clicked', button.textContent);
-        localStorage.setItem('genre', button.textContent)
-        const filteredMovies = filterMovies(moviesArr, button.textContent)
-        renderMovies(filteredMovies)
+        if(button.textContent === 'All') {
+            renderMovies(moviesArr)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            localStorage.setItem('genre', button.textContent)
+            const filteredMovies = filterMovies(moviesArr, button.textContent)
+            renderMovies(filteredMovies)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
     })
+})
+
+// Add event listener to the search button
+searchBtn.addEventListener('click', () => {
+    const searchValue = searchInput.value
+    const filteredMovies = moviesArr.filter((movie) => movie.primaryTitle.toLowerCase() === searchValue.toLowerCase())
+    if(filteredMovies.length === 0) {
+        const errorMessage = document.createElement('p')
+        errorMessage.textContent = `Sorry No movie found with the name: ${searchValue}`
+        errorMessage.style.color = 'rgb(164, 21, 64)'
+        filmContainer.innerHTML = ''
+        filmContainer.appendChild(errorMessage)
+    } else {
+    renderMovies(filteredMovies)
+    }
+})
+
+// Add event listener to the search input.
+searchInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') {
+        const searchValue = searchInput.value
+        const filteredMovies = moviesArr.filter((movie) => movie.primaryTitle.toLowerCase() === searchValue.toLowerCase())
+        if(filteredMovies.length === 0) {
+            const errorMessage = document.createElement('p')
+            errorMessage.textContent = `Sorry No movie found with the name: ${searchValue}`
+            errorMessage.style.color = 'rgb(164, 21, 64)'
+            filmContainer.innerHTML = ''
+            filmContainer.appendChild(errorMessage)
+        } else {
+        renderMovies(filteredMovies)
+        }
+    }
 })
 
 // Function filterMovies

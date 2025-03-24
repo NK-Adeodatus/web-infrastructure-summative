@@ -8,15 +8,9 @@
 </head>
 <body>
     <nav>
-        <a href="/" class="active">#MovieHub</a>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/movies">Movies</a></li>
-            <li><a href="/movies/:id">Favorites</a></li>
-        </ul>
-        <input type="text" placeholder="Search..">
-        <button type="submit" class="search-btn">Search</button>
-        <button class="login-btn">Login</button>    
+        <h1>#MovieHub</h1>
+        <input type="text" placeholder="Search.." class="search-input">
+        <button class="search-btn">Search</button>   
     </nav>
     <main>
         <h1>MovieHub</h1>
@@ -24,6 +18,7 @@
         <div class="container">
 
             <div class="sorting-btns">
+                <button id="all">All</button>
                 <button id="action">Action</button>
                 <button id="adventure">Adventure</button>
                 <button id="romance">Romance</button>
