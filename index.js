@@ -25,7 +25,10 @@ sortingButtons.forEach((button) => {
             renderMovies(filteredMovies)
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
+        sortingButtons.forEach((btn) => {
+            btn.classList.remove('active')
+        })
+        button.classList.add('active')
     })
 })
 
@@ -39,8 +42,10 @@ searchBtn.addEventListener('click', () => {
         errorMessage.style.color = 'rgb(164, 21, 64)'
         filmContainer.innerHTML = ''
         filmContainer.appendChild(errorMessage)
+        searchInput.value = ''
     } else {
     renderMovies(filteredMovies)
+    searchInput.value = ''
     }
 })
 
@@ -55,8 +60,10 @@ searchInput.addEventListener('keypress', (e) => {
             errorMessage.style.color = 'rgb(164, 21, 64)'
             filmContainer.innerHTML = ''
             filmContainer.appendChild(errorMessage)
+            searchInput.value = ''
         } else {
         renderMovies(filteredMovies)
+        searchInput.value = ''
         }
     }
 })

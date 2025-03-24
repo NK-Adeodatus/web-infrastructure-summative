@@ -81,6 +81,10 @@ nav .search-btn:hover{
     margin-bottom: 5px;
 }
 
+.sorting-btns>button:hover{
+    background-color: grey;
+}
+
 .welcome-msg{
     text-align: center;
 }
@@ -152,5 +156,10 @@ nav>h1{
 
 #like-btn:hover{
     background-color: #182F30;
+    color: white;
+}
+
+.sorting-btns>button.active{
+    background-color: grey;
     color: white;
 }
