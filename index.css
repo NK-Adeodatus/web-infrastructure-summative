@@ -1,0 +1,146 @@
+html body{
+    padding: 0;
+    margin: 0;
+    background-color: #182F30;
+    color: white;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+    background-color: #0A191E;
+    color: white;
+}
+
+nav>ul{
+    display: flex;
+    list-style: none;
+}
+
+nav>ul>li>a{
+    margin-right: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+nav>ul>li>a:hover{
+    color: rgb(164, 21, 64);
+}
+
+nav>ul>li>a.active{
+    color: rgb(164, 21, 64);
+}
+
+nav>input{
+    width: 200px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 15px;
+}
+
+nav .search-btn{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+nav .search-btn:hover{
+    background-color: grey;
+}
+
+.login-btn{
+    margin-right: 50px;
+    background-color: #182F30;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 60px;
+    border-radius: 5px;
+}
+
+.login-btn:hover{
+    background-color: grey;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.sorting-btns{
+    margin-left: 10%;
+    height: 70%;
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+
+.sorting-btns>button{
+    background-color: #0A191E;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 2%;
+}
+
+.welcome-msg{
+    text-align: center;
+}
+
+main>h1{
+    text-align: center;
+}
+
+/* from js */
+
+.movie-picture { 
+    width: 230px;
+    height: 375px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 15px;
+}
+.rating-Id { display: flex; align-items: center; }
+.likes-rating { margin-left: 10px; }
+.discriptionContainer { margin-top: 10px; }
+.movie-type { font-weight: bold; }
+.secondpart { display: flex; }
+.type-title-container { margin-top: 5px; }
+.star-img { width: 20px; }
+.film-container { 
+    display: flex; 
+}
+.div-id-container { 
+    display: flex;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: rgb(74, 74, 74);
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 450px;
+}
+.content-div{
+    height: auto;
+}
+.outer-film-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#film-container {
+    border-radius: 15px;
+    padding: 10px;
+    padding-bottom: 0;
+    width: 80%;
+
+}

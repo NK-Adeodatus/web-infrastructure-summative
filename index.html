@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>MovieHub</title>
+</head>
+<body>
+    <nav>
+        <a href="/" class="active">#MovieHub</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/movies">Movies</a></li>
+            <li><a href="/movies/:id">Favorites</a></li>
+        </ul>
+        <input type="text" placeholder="Search..">
+        <button type="submit" class="search-btn">Search</button>
+        <button class="login-btn">Login</button>    
+    </nav>
+    <main>
+        <h1>MovieHub</h1>
+        <p class="welcome-msg">Welcome to Movie Picks, your guide to the best and most popular films. Discover top-rated movies, explore ratings, and find your next favorite watch!</p>
+        <div class="container">
+
+            <div class="sorting-btns">
+                <button id="action">Action</button>
+                <button id="adventure">Adventure</button>
+                <button id="romance">Romance</button>
+                <button id="horror">Horror</button>
+                <button id="comedy">Comedy</button>
+                <button id="animation">Animation</button>
+                <button id="fantasy">Fantasy</button>
+                <button id="drama">Drama</button>
+            </div>
+            <div class="outer-film-container">
+                <div id="film-container">
+        
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
