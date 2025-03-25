@@ -32,6 +32,9 @@ sortingButtons.forEach((button) => {
 
 // Add event listener to the search button
 searchBtn.addEventListener('click', () => {
+    if(searchInput.value === '') {
+        return
+    }
     const searchValue = searchInput.value
     const filteredMovies = moviesArr.filter((movie) => movie.primaryTitle.toLowerCase() === searchValue.toLowerCase())
     if(filteredMovies.length === 0) {
@@ -49,6 +52,9 @@ searchBtn.addEventListener('click', () => {
 
 // Add event listener to the search input.
 searchInput.addEventListener('keypress', (e) => {
+    if(searchInput.value === '') {
+        return
+    }
     if(e.key === 'Enter') {
         const searchValue = searchInput.value
         const filteredMovies = moviesArr.filter((movie) => movie.primaryTitle.toLowerCase() === searchValue.toLowerCase())
