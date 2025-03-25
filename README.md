@@ -126,7 +126,7 @@ Fast and reliable API integration from RapidAPI
 
 ## Setting Up The Project
 
-To get the project up and running on your local machine or servers, follow the steps below:
+Steps to Get the project up and running on the servers, follow the steps below:
 
 
 1. Set Up Nginx on Web Servers
@@ -145,7 +145,7 @@ Configure the load balancer (lb-01) to distribute traffic evenly between web-01 
 4. API Configuration
 Sign up for RapidAPI and get your API key for the IMDb Data API.
 
-Replace the API key in the application's configuration files to enable API calls.
+Replace the API key in the file that contain the nodejs code to enable API calls.
 
 5. Start the Application
 Once the setup is complete, start the application on both web servers, and the load balancer will begin handling incoming traffic.
