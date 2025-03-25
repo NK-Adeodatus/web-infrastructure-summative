@@ -9,13 +9,11 @@ const cashedMovies = localStorage.getItem("movies")
 let movies
 let moviesArr
 let moviesGenre = localStorage.getItem('genre')
-console.log('genre', moviesGenre);
 
 // Add event listener to the filter button
 const sortingButtons = document.querySelectorAll('.sorting-btns button');
 sortingButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log('clicked', button.textContent);
         if(button.textContent === 'All') {
             renderMovies(moviesArr)
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -77,12 +75,9 @@ function filterMovies(movieArr, genre) {
 if(cashedMovies) {
     moviesArr = JSON.parse(cashedMovies)
     movies = moviesGenre ? filterMovies(moviesArr, moviesGenre) : moviesArr
-    renderMovies(movies)
-    console.log('filtered movies',movies)      
+    renderMovies(movies)      
 }
 else {
-    console.log('fetching movies');
-    
     fetchMovies()
     .then((response) => {
         moviesArr = response
@@ -92,11 +87,9 @@ else {
     })
     .catch((err) => console.log(err))
 }
-console.log(movies);
 
 // Function to render the movies
 function renderMovies(movies) {
-    console.log('rendering movies');
     filmContainer.innerHTML = '';
     // loop through the movies and create the elements
     movies.forEach((film) => {
