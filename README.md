@@ -150,6 +150,43 @@ Replace the API key in the application's configuration files to enable API calls
 5. Start the Application
 Once the setup is complete, start the application on both web servers, and the load balancer will begin handling incoming traffic.
 
+
+## 🔒 Node.js Server for Secure API Integration
+To securely fetch data from RapidAPI without exposing the API key to the frontend, a Node.js server is used as a proxy. Here’s how it works:
+
+1. Frontend Request:
+
+The frontend (api.js) sends a request to the Node.js server at /movies.
+Node.js Server:
+
+2. The Node.js server receives the request and forwards it to RapidAPI using the API key stored in a .env file.
+The response from RapidAPI is sent back to the frontend.
+3. Security:
+
+The API key is never exposed to the frontend, ensuring secure communication with RapidAPI.
+Node.js Server Code:
+## 🌐 Nginx Configuration for Proxying Requests
+Nginx is configured to act as a reverse proxy between the frontend and the Node.js server. This ensures that requests to /movies are routed to the Node.js server running on localhost:3000.
+
+Nginx Configuration:
+Add the following configuration to /etc/nginx/sites-available/default:
+    location /movies {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+Steps to Configure Nginx:
+1. Open the Nginx configuration file:
+    sudo nano /etc/nginx/sites-available/default
+
+2. Add the above location /movies block under the appropriate server block.
+
+3. Reload Nginx to apply the changes:
+    sudo systemctl reload nginx
+
+
 ## Conclusion
 
 This project leverages modern infrastructure and APIs to provide an interactive experience for users looking to explore IMDb data. The setup ensures high availability and scalability, providing a seamless user experience.
