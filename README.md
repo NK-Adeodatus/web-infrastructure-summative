@@ -108,7 +108,12 @@ Easy integration with the project
 4. Infrastructure Setup
 The application was set up by following these steps:
 
-Cloning the Project: The project repository was cloned from GitHub onto the two web servers (web-01 and web-02).
+Secure Copy: The project files were securely copied from the local machine to the two web servers (`<IP-address-1>` and `<IP-address-2>`) using the `scp` command:
+
+   ```bash
+   scp /path/to/project/file user@<web-01-IP-address-1>:/var/www/html
+   scp /path/to/project/file user@<web-02-IP-address-2>:/var/www/html
+   ```
 
 Hosting with Nginx: Both web servers are configured with Nginx to serve the application efficiently.
 
@@ -137,9 +142,11 @@ Make sure Nginx is set up to serve the application files on both servers.
 2. Set Up the Load Balancer
 Configure the load balancer (lb-01) to distribute traffic evenly between web-01 and web-02.
 
-3. Clone the Repository
+3. Secure Copy: The project files were securely copied from the local machine to the two web servers (`<IP-address-1>` and `<IP-address-2>`) using the `scp` command:
+
    ```bash
-   git clone https://github.com/NK-Adeodatus/web-infrastructure-summative
+   scp -r /path/to/project/files user@<IP-address-1>:/var/www/html
+   scp -r /path/to/project/files user@<IP-address-2>:/var/www/html
    ```
 
 4. Start the Application
