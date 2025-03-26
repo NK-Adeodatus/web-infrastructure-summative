@@ -149,7 +149,7 @@ Configure the load balancer (lb-01) to distribute traffic evenly between web-01 
    scp -r /path/to/project/files user@<IP-address-2>:/var/www/html
    ```
 
-4. Start the Application
+4. Start the Application:
 Once the files of the are in the /var/www/html directory the servers start hosting the website, and the load balancer will begin handling incoming traffic.
 
 ## Conclusion
