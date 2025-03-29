@@ -2,6 +2,8 @@
 
 MovieHub is a web application that allows users to explore and discover the best and most popular movies from various genres. With this platform, users can search for specific movies, filter movies by genre, and explore details such as ratings, descriptions, and more.
 
+[🎬 Watch the Demo Video](https://youtu.be/Yk4HQAawkZQ)
+
 ---
 
 ## 🌟 Features
